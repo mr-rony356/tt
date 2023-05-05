@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import mark from '../assets/images/icons/mark.png'
 import girl from '../assets/images/icons/girl.png';
 import { useWeb3React } from '@web3-react/core';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTranslation } from "react-i18next";
 import icon1 from "../assets/images/icons/3.png"
 import icon2 from "../assets/images/icons/1.png"
@@ -62,14 +63,18 @@ const Title = styled.span`
       font-weight: bold;
   `;
 
+
+
+export default function BasicModal() {
+  const isMobile = useMediaQuery('(max-width: 600px)');
   const style = {
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 600,
-    height: '90%',
-    overflow: 'scroll',
+    width: isMobile ? '90%' : 550,
+    height: isMobile ? '90%' : '80%',
+  overflow: 'scroll',
     borderRadius: '15px',
     bgcolor: 'white',
     //   border: '2px solid #000',
@@ -81,9 +86,9 @@ const Title = styled.span`
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 550,
-    height: '70%',
-    borderRadius: '15px',
+    width: isMobile ? '90%' : 530,
+    height: isMobile ? '70%' : '70%',
+  borderRadius: '15px',
     bgcolor: 'white',
     //   border: '2px solid #000',
     boxShadow: 24,
@@ -94,16 +99,15 @@ const Title = styled.span`
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 530,
-    height: '60%',
-    borderRadius: '15px',
+    width: isMobile ? '90%' : 530,
+    height: isMobile ? '70%' : '60%',
+  borderRadius: '15px',
     bgcolor: 'white',
     //   border: '2px solid #000',
     boxShadow: 24,
     p: 3,
   };
 
-export default function BasicModal() {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
@@ -236,14 +240,14 @@ export default function BasicModal() {
 
             <div className="row mb-3 row justify-content-between">
               <div className="col-md-6">
-                <div className="d-flex">
-                  <div>
+                <div className=" row d-flex">
+                  <div className="col-md-6">
                     <Link to={`/`}>
                       <img src={'https://i.seadn.io/gcs/files/6ad18b0e2c45c7f1eda6be028f3d931a.png?auto=format&w=1000'} className="img-fluid" alt="nft image" style={{ width: '50%', borderRadius: '10px' }} />
                     </Link>,
 
                   </div>
-                  <div className="text-left">
+                  <div className= " col-md-6 mobile-ceneter text-left">
                     <p className="md bold-lg">Kidzoki#257</p>
                     <p className="sm bold-md">kidzoki Georil</p>
                     <p className="sm">rarity #124 </p>
@@ -399,7 +403,7 @@ export default function BasicModal() {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-          <Box sx={styleOne}>
+          <Box sx={styleOne} className="flex">
 
 
 <div className="row border-ui padding-ov">

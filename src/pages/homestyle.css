@@ -96,3 +96,13 @@
 .min-height{
   min-height: auto;
 }
+@media (max-width:600px) {
+  
+  .mobile-ceneter{
+    text-align: center;
+  }
+  .girl{
+    width: 120px;
+    height: 100px;
+  }
+}

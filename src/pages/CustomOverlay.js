@@ -14,6 +14,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import IosShareIcon from '@mui/icons-material/IosShare';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
+import useMediaQuery from '@mui/material/useMediaQuery';
 import Modal from '@mui/material/Modal';
 import Fade from '@mui/material/Fade';
 import Typography from '@mui/material/Typography';
@@ -46,13 +47,14 @@ function OverlayComponent() {
 
   }
   const [value, setValue] = React.useState(dayjs('2022-04-17'));
+  const isMobile = useMediaQuery('(max-width: 600px)');
   const style = {
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 530,
-    height: '90%',
+    width: isMobile ? '90%' : 530,
+    height: isMobile ? '100%' : '90%',
     borderRadius: '15px',
     bgcolor: 'white',
       border: '2px solid #fff',
@@ -64,8 +66,8 @@ function OverlayComponent() {
       top: '50%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
-      width: 530,
-      height: '60%',
+      width: isMobile ? '90%' : 530,
+      height: isMobile ? '90%' : '80%',
       borderRadius: '15px',
       bgcolor: 'white',
       //   border: '2px solid #000',
@@ -77,11 +79,11 @@ function OverlayComponent() {
       top: '50%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
-      width: 550,
-      height: '70%',
+      width: isMobile ? '90%' : 550,
+      height: isMobile ? '90%' : '70%',
       borderRadius: '15px',
       bgcolor: 'white',
-      //   border: '2px solid #000',
+      // border: '2px solid #000',
       boxShadow: 24,
       p: 3,
     };
@@ -181,7 +183,7 @@ function OverlayComponent() {
 
     </div>
     <div>
-      <button onClick={handleOpenOne} className="btn btn-ui rounded-md w-100 mb-4 mb-3" >
+      <button onClick={handleOpenOne} className="btn btn-ui rounded-md w-100 mb-4 " >
         CREATE POOL
       </button>
       <button  className="btn btn-ui-muted rounded-md w-100 mb-3" >
