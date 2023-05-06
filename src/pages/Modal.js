@@ -72,8 +72,8 @@ export default function BasicModal() {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: isMobile ? '90%' : 550,
-    height: isMobile ? '90%' : '80%',
+    width: isMobile ? '100%' : 600,
+    height: isMobile ? '100%' : '80%',
   overflow: 'scroll',
     borderRadius: '15px',
     bgcolor: 'white',
@@ -86,21 +86,21 @@ export default function BasicModal() {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: isMobile ? '90%' : 530,
-    height: isMobile ? '70%' : '70%',
+    width: isMobile ? '100%' : 530,
+    height: isMobile ? '100%' : '70%',
   borderRadius: '15px',
     bgcolor: 'white',
     //   border: '2px solid #000',
     boxShadow: 24,
-    p: 3,
+    p: 2,
   };
   const styleOne = {
     position: 'absolute',
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: isMobile ? '90%' : 530,
-    height: isMobile ? '70%' : '60%',
+    width: isMobile ? '100%' : 530,
+    height: isMobile ? '100%' : '70%',
   borderRadius: '15px',
     bgcolor: 'white',
     //   border: '2px solid #000',
@@ -213,22 +213,22 @@ export default function BasicModal() {
 
           <div className=" max-width text-center">
 
-            <div className="row mb-3">
+            <div className= {`${isMobile ? '  d-flex between mb-3' : 'row mb-3'}`}>
 
-              <div className="col-md-6">
+              <div className={`${isMobile ?'': 'col-md-6'}`}>
 
-                <button className={`btn ${type2 === 'fixed' ? 'btn-ui' : 'btn-ui-muted'}  w-100 mt-3`}
-                  style={{ fontSize: 14 }}
+                <button className={`btn ${type2 === 'fixed' ? 'btn-ui' : 'btn-ui-muted'} ${isMobile ? 'col-md-6':''}  w-100 mt-3`}
+                  style={{ fontSize: isMobile ? 12 : 14 }}
                   onClick={() => setType2('fixed')}
                 >
                   Fixed Price
 
                 </button>
               </div>
-              <div className="col-md-6">
+              <div className={`${isMobile ? '' : 'col-md-6'}`}>
                 <button
                   className={`btn ${type2 === 'auction' ? 'btn-ui' : 'btn-ui-muted'}  w-100 mt-3`}
-                  style={{ fontSize: 16 }}
+                  style={{ fontSize:  isMobile ? 12 : 14  }}
                   onClick={() => setType2('auction')}
                 >
                   Bid/Auction
@@ -238,27 +238,25 @@ export default function BasicModal() {
             </div>
 
 
-            <div className="row mb-3 row justify-content-between">
-              <div className="col-md-6">
-                <div className=" row d-flex">
-                  <div className="col-md-6">
-                    <Link to={`/`}>
-                      <img src={'https://i.seadn.io/gcs/files/6ad18b0e2c45c7f1eda6be028f3d931a.png?auto=format&w=1000'} className="img-fluid" alt="nft image" style={{ width: '50%', borderRadius: '10px' }} />
-                    </Link>,
+            <div className={`${isMobile ? 'mbm-1 d-flex between' : 'mb-5 d-flex between'}`}>
 
-                  </div>
-                  <div className= " col-md-6 mobile-ceneter text-left">
+            <div className='d-flex '>
+                    <a to={`/`}>
+                      <img src={'https://i.seadn.io/gcs/files/6ad18b0e2c45c7f1eda6be028f3d931a.png?auto=format&w=1000'} alt="nft image" style={{ width: '70px', borderRadius: '10px', margin:'0 10px' }} />
+                    </a>
+
+                  <div >
                     <p className="md bold-lg">Kidzoki#257</p>
                     <p className="sm bold-md">kidzoki Georil</p>
                     <p className="sm">rarity #124 </p>
 
+                    </div>
+                    </div>
 
-                  </div>
 
 
 
-                </div>
-              </div>
+
               {/* <label className="form-label">Vault NFTs</label>
                     <input type="text" className="form-control" placeholder="Vault name"
                       value={name2} onChange={event => setName2(event.target.value)} /> */}
@@ -270,7 +268,8 @@ export default function BasicModal() {
                 <p className="md bold-lg">3 ETH</p>
                 <p className="sm">$5764 USD</p>
               </div>
-            </div>
+              </div>
+
             <div className="mb-3">
               {/* <label className="form-label">Token & Price</label>
                   <input type="number" className="form-control input-number" placeholder={`Reserve price in ${process.env.REACT_APP_COIN}`}
@@ -283,13 +282,13 @@ export default function BasicModal() {
             </div>
             <div className=" mb-3">
               <p className="text-left">*Set a price</p>
-              <div className="row mb-3">
+              <div className= {`${isMobile ? '  d-flex between mb-3' : 'row mb-3'}`}>
 
-                <div className="col-md-6">
+              <div className={`${isMobile ? '' : 'col-md-6'}`}>
                   <input type="text" className="form-control input-font-ui input-number" placeholder="Token supply"
                     value={'Floor 3ETH'} onChange={event => setSupply2(event.target.value)} />
                 </div>
-                <div className="col-md-6">
+                <div className={`${isMobile ? '' : 'col-md-6'}`}>
                   <input type="text" className="form-control input-font-ui" placeholder="Token symbol"
                     value={'Top Trait 2.5ETH'} onChange={event => setSymbol2(event.target.value)} />
                 </div>
@@ -308,21 +307,21 @@ export default function BasicModal() {
             <FormHelperText id="standard-weight-helper-text">$5764.68 USD</FormHelperText>
 
             <div className=" border-ui mb-3">
-              <div className="row">
-                <div className="col-md-4 text-center">
-                  <span className="sm "><img src={icon1} height={20} alt="" />Set Fractionalize shares </span>
+            <div className= {`${isMobile ? '  d-flex around ' : 'row'}`}>
+            <div className={`${isMobile ? '' : 'col-md-4 text-center'}`}>
+                  <span className="sm-s sm "><img src={icon1} height={10} alt="" />Set Fractionalize shares </span>
                   <input type="text" className="form-control padding border-ui  input-font-ui"
                     value={100} />
                   <p className="sm">Upto 100,000,000 max</p>
                 </div>
-                <div className="col-md-4">
-                  <span className="sm "><img src={icon2} height={20} alt="" />Set Price for shares </span>
+                <div className={`${isMobile ? '' : 'col-md-4 text-center'}`}>
+                  <span className="sm-s sm "><img src={icon2} height={10} alt="" />Set Price for shares </span>
                   <input type="text" className="form-control padding border-ui  input-font-ui"
                     value={'$50'} />
                   <p className="sm">.25</p>
                 </div>
-                <div className="col-md-4">
-                  <span className="sm "><img src={icon3} height={20} alt="" />Token name </span>
+                <div className={`${isMobile ? '' : 'col-md-4 text-center'}`}>
+                  <span className="sm-s sm"><img src={icon3} height={10} alt="" />Token name </span>
                   <input type="text" className="form-control padding border-ui  input-font-ui"
                     value={'Kidzuki'} />
                 </div>
@@ -347,7 +346,7 @@ export default function BasicModal() {
                                 </div>
               <div className="mb-3">
                 <p className="text-left sm"> Pool Name</p>
-                <div className="mb-3">
+                <div className={`${isMobile ? 'mbm-1' : 'mb-3'}`}>
                   <Textarea className="border-ui text-center"  placeholder="My Pool Name" minRows={2} />
                 </div>
                 <p className="text-left sm "><Checkbox size="small" /> Private pool (Not listed on marketplace)</p>
@@ -358,7 +357,7 @@ export default function BasicModal() {
 
             </>}
             {type2 === 'fixed' && <>
-              <div className="mb-3">
+            <div className={`${isMobile ? 'mbm-1' : 'mb-3'}`}>
                 <p className="text-left md "> Pool Name</p>
                 <Textarea className="border-ui" minRows={3} />
 
@@ -371,8 +370,8 @@ export default function BasicModal() {
 
 
             }
-            <div className="mb-3">
-              <Box sx={{ width: 500 }}>
+                <div className={`${isMobile ? 'mbm-1' : 'mb-3'}`}>
+              <Box sx={{ width: '100%' }}>
                 <Typography id="track-inverted-slider" className="text-left md" gutterBottom>
                   Creator Fees
                 </Typography>
@@ -390,7 +389,7 @@ export default function BasicModal() {
 
             </div>
 
-            <button onClick={handleOpenOne} className="btn btn-ui rounded-md w-100 mt-3" >
+            <button onClick={handleOpenOne} className="btn btn-ui rounded-md w-100 " >
               CREATE POOL
          
             </button>
@@ -406,26 +405,22 @@ export default function BasicModal() {
           <Box sx={styleOne} className="flex">
 
 
-<div className="row border-ui padding-ov">
-  <div className=' row d-flex  justify-content-between mb-3'> 
-    <div className='col-md-6'>
-    <p className='font-ui-cl' >APPROVE CrawdSale</p>
+          <div className="row  padding-ov">
+<div className=' cross mb-3 text-right'>  <CloseIcon className='close' onClick={handleCloseOne} ></CloseIcon></div>
 
-    </div>
-    <div className='col-md-6  mb-3 text-right'>  <CloseIcon className='close' onClick={handleCloseOne} ></CloseIcon></div>
+  <div className=' mb-3'> 
+    <p className='font-ui-cl padding-top' >APPROVE POOL</p>
+
 
   </div>
 
-  <div className="row mb-3  justify-content-between">
-              <div className="col-md-8">
-                <div className="d-flex">
-                  <div>
+  <div className=" mb-5 d-flex between ">
+                <div className='d-flex between'>
                     <a>
-                      <img src={'https://i.seadn.io/gcs/files/6ad18b0e2c45c7f1eda6be028f3d931a.png?auto=format&w=1000'}alt="nft image" style={{ width: '60px', borderRadius: '10px' , margin:'10px' }} />
+                      <img src={'https://i.seadn.io/gcs/files/6ad18b0e2c45c7f1eda6be028f3d931a.png?auto=format&w=1000'}alt="nft image" style={{ height: '70px', borderRadius: '10px' , margin:'10px' }} />
                     </a>
 
-                  </div>
-                  <div className="text-center m-t">
+                  <div className="m-t">
                     <p className="md bold-lg">Kidzoki#257</p>
                     <p className="sm bold-md">kidzoki Georil</p>
                     <p className="sm">rarity #124 </p>
@@ -435,11 +430,10 @@ export default function BasicModal() {
 
 
 
-                </div>
               </div>
 
 
-              <div className="col-md-4 text-right">
+              <div className="">
               <p className="md ">3 ETH</p>
 
               <p className="sm">7 days duration</p>
@@ -448,7 +442,7 @@ export default function BasicModal() {
               </div>
             </div>
             <hr />
-  <div className='mb-3'>
+  <div className='mb-5'>
     <p className='bold-md'>Go to your wallet
 </p>
 <p className='sm'>You'll be asked to approve this pool from your wallet.</p>
@@ -456,8 +450,11 @@ export default function BasicModal() {
 
 
   <div className="mb-3">
-    <button onClick={handleOpenTwo} className="btn btn-ui w-100 mt-3" >
+  <button onClick={handleOpenTwo} className="btn btn-ui w-100 mt-3" >
      Approve
+    </button>
+    <button onClick={handleOpenTwo} className="btn btn-ui-muted w-100 mt-3" >
+     Cancel Pool
     </button>
 
 
@@ -474,23 +471,23 @@ export default function BasicModal() {
         aria-describedby="modal-modal-description"
       >
         <Box sx={styleS} className="flex">
-          <div className="row border-ui padding-ov">
-        <div className='text-right w-100'>  <CloseIcon className='close' onClick={handleCloseTwo} ></CloseIcon></div>
+        <div className="row  padding-ov">
+<div className=' cross mb-3 text-right'>  <CloseIcon className='close' onClick={handleCloseTwo} ></CloseIcon></div>
 
-          <p className='text-center md-lg bold-md mb-3'>Congratulations!</p>
+          <p className='text-center md-lg bold-md mb-3 mbm-5'>Congratulations!</p>
           <div className='text-center mb-3'>
-            <img src={girl} alt="girl" className="girl mb-3" />
+            <img src={girl} alt="girl" className="girl bd-radius mb-3" />
 
           </div>
-          <div className="ow mb-3">
+          <div className="ow mb-3 mbm-5">
             <p className='md  text-center bold-lg mb-3 '> <span><img src={mark} width={30} alt="" /></span> Your pool is complete & live now</p>
 
           </div>
-          <div className="mb-3 text-center">
-            <span className='md border-ui text-center bold-lg mb-3 '> Pool ID</span>
+          <div className="mb-5 text-center">
+            <span className='md border-ui text-center bold-lg mb-5 '> Pool ID</span>
 
           </div>
-          <div className='d-flex text-center w-100 ui-icon '>
+          <div className='d-flex text-center w-100 ui-icon  mb-3 mbm-5'>
           <i class=" uil-facebook-f"></i>
                 <i class=" uil-instagram"></i>
 
@@ -501,8 +498,8 @@ export default function BasicModal() {
           </div>
 
 
-          <div className="mb-3">
-            <button onClick={handleCloseTwo} className="btn btn-ui rounded-md w-100 mt-3" >
+          <div>
+            <button onClick={handleCloseTwo} className="btn btn-ui rounded-md w-100" >
               View  POOL
               listing
             </button>

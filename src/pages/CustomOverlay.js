@@ -53,34 +53,34 @@ function OverlayComponent() {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: isMobile ? '90%' : 530,
+    width: isMobile ? '100%' : 530,
     height: isMobile ? '100%' : '90%',
     borderRadius: '15px',
     bgcolor: 'white',
       border: '2px solid #fff',
     boxShadow: 24,
-    p: 3,
-    };
+    p:  isMobile ? 1 : 3,
+  };
     const styleOne = {
       position: 'absolute',
       top: '50%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
-      width: isMobile ? '90%' : 530,
-      height: isMobile ? '90%' : '80%',
+      width: isMobile ? '100%' : 530,
+      height: isMobile ? '100%' : '70%',
       borderRadius: '15px',
       bgcolor: 'white',
       //   border: '2px solid #000',
       boxShadow: 24,
-      p: 3,
+      p:  isMobile ? 1 : 3,
     };
     const styleS = {
       position: 'absolute',
       top: '50%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
-      width: isMobile ? '90%' : 550,
-      height: isMobile ? '90%' : '70%',
+      width: isMobile ? '100%' : 550,
+      height: isMobile ? '100%' : '70%',
       borderRadius: '15px',
       bgcolor: 'white',
       // border: '2px solid #000',
@@ -215,29 +215,25 @@ function OverlayComponent() {
         }}
       >
         <Fade in={openOne} className="flex">
-          <Box sx={styleOne}>
+          <Box sx={styleOne} className="relative">
 
 
-<div className="row border-ui padding-ov">
-  <div className=' row d-flex  justify-content-between mb-3'> 
-    <div className='col-md-6'>
-    <p className='font-ui-cl' >APPROVE POOL</p>
+<div className="row  padding-ov">
+<div className=' cross mb-3 text-right'>  <CloseIcon className='close' onClick={handleCloseOne} ></CloseIcon></div>
 
-    </div>
-    <div className='col-md-6  mb-3 text-right'>  <CloseIcon className='close' onClick={handleCloseOne} ></CloseIcon></div>
+  <div className=' mb-3'> 
+    <p className='font-ui-cl padding-top' >APPROVE POOL</p>
+
 
   </div>
 
-  <div className="row mb-3  justify-content-between">
-              <div className="col-md-8">
-                <div className="d-flex">
-                  <div>
+  <div className=" mb-5 d-flex between ">
+                <div className='d-flex between'>
                     <a>
-                      <img src={'https://i.seadn.io/gcs/files/6ad18b0e2c45c7f1eda6be028f3d931a.png?auto=format&w=1000'}alt="nft image" style={{ width: '60px', borderRadius: '10px' , margin:'10px' }} />
+                      <img src={'https://i.seadn.io/gcs/files/6ad18b0e2c45c7f1eda6be028f3d931a.png?auto=format&w=1000'}alt="nft image" style={{ height: '70px', borderRadius: '10px' , margin:'10px' }} />
                     </a>
 
-                  </div>
-                  <div className="text-center m-t">
+                  <div className="m-t">
                     <p className="md bold-lg">Kidzoki#257</p>
                     <p className="sm bold-md">kidzoki Georil</p>
                     <p className="sm">rarity #124 </p>
@@ -247,11 +243,10 @@ function OverlayComponent() {
 
 
 
-                </div>
               </div>
 
 
-              <div className="col-md-4 text-right">
+              <div className="">
               <p className="md ">3 ETH</p>
 
               <p className="sm">7 days duration</p>
@@ -260,7 +255,7 @@ function OverlayComponent() {
               </div>
             </div>
             <hr />
-  <div className='mb-3'>
+  <div className='mb-5'>
     <p className='bold-md'>Go to your wallet
 </p>
 <p className='sm'>You'll be asked to approve this pool from your wallet.</p>
@@ -268,8 +263,11 @@ function OverlayComponent() {
 
 
   <div className="mb-3">
-    <button onClick={handleOpenTwo} className="btn btn-ui w-100 mt-3" >
+  <button onClick={handleOpenTwo} className="btn btn-ui w-100 mt-3" >
      Approve
+    </button>
+    <button onClick={handleOpenTwo} className="btn btn-ui-muted w-100 mt-3" >
+     Cancel Pool
     </button>
 
 
@@ -294,25 +292,26 @@ function OverlayComponent() {
         }}
       >
         <Fade in={openTwo}>
-          <Box sx={styleS} className="flex">
+        <Box sx={styleOne} className="relative flex">
 
-        <div className="row border-ui padding-ov">
-        <div className='text-right w-100'>  <CloseIcon className='close' onClick={handleCloseTwo} ></CloseIcon></div>
 
-          <p className='text-center md-lg bold-md mb-3'>Congratulations!</p>
+<div className="row  padding-ov">
+<div className=' cross mb-3 text-right'>  <CloseIcon className='close' onClick={handleCloseTwo} ></CloseIcon></div>
+
+          <p className='text-center md-lg bold-md mb-3 mbm-5'>Congratulations!</p>
           <div className='text-center mb-3'>
-            <img src={girl} alt="girl" className="girl mb-3" />
+            <img src={girl} alt="girl" className="girl bd-radius mb-3" />
 
           </div>
-          <div className="ow mb-3">
+          <div className="ow mb-3 mbm-5">
             <p className='md  text-center bold-lg mb-3 '> <span><img src={mark} width={30} alt="" /></span> Your pool is complete & live now</p>
 
           </div>
-          <div className="mb-3 text-center">
-            <span className='md border-ui text-center bold-lg mb-3 '> Pool ID</span>
+          <div className="mb-5 text-center">
+            <span className='md border-ui text-center bold-lg mb-5 '> Pool ID</span>
 
           </div>
-          <div className='d-flex text-center w-100 ui-icon '>
+          <div className='d-flex text-center w-100 ui-icon  mb-3 mbm-5'>
           <i class=" uil-facebook-f"></i>
                 <i class=" uil-instagram"></i>
 
@@ -323,8 +322,8 @@ function OverlayComponent() {
           </div>
 
 
-          <div className="mb-3">
-            <button onClick={handleClicks} className="btn btn-ui rounded-md w-100 mt-3" >
+          <div>
+            <button onClick={handleClicks} className="btn btn-ui rounded-md w-100" >
               View  POOL
               listing
             </button>

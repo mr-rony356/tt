@@ -87,7 +87,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px !important;
 }
 .mt-all{
 
@@ -96,13 +95,70 @@
 .min-height{
   min-height: auto;
 }
+.float-l{
+  float: right;
+}
+.between{
+  justify-content: space-between;
+}
+.around{
+  justify-content: space-evenly;
+}
+.relative{
+  position: relative;
+}
+.padding-top{
+  padding-top: 20px;
+}
+.cross{
+  position: absolute;
+  top: 25px;
+  right: 15px;
+}
 @media (max-width:600px) {
   
   .mobile-ceneter{
     text-align: center;
   }
+  .sm-s{
+    font-size: 7px;
+  }
   .girl{
     width: 120px;
-    height: 100px;
+    height: 110px;
   }
+  .mobile-flex{
+    flex-direction: row !important;
+    display: flex;
+  }
+  .float-l{
+    float: none;
+  }
+  .font-ui-cl{
+    color: #000000;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px 0;
+  }
+  .mbm-5{
+    margin-bottom: 3rem !important;
+  }
+  .mbm-1{
+    margin-bottom: .5rem !important;
+  }
+  
+}
+@media (max-width: 600px){
+.css-1xhypcz-MuiStack-root{
+
+  flex-direction: row !important;
+  align-items: center !important; 
+}
+.css-1xhypcz-MuiStack-root>.MuiTextField-root {
+  min-width: 50% !important;
+}
+.css-1xhypcz-MuiStack-root>:not(style)+:not(style) {
+  margin-top: 0px !important;
+}
 }
