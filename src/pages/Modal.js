@@ -39,6 +39,10 @@ const marks = [
     label: '0%',
   },
   {
+    value: 5,
+    label: '5%',
+  },
+  {
     value: 10,
     label: '10%',
   },
@@ -79,7 +83,7 @@ export default function BasicModal() {
     bgcolor: 'white',
     //   border: '2px solid #000',
     boxShadow: 24,
-    p: 3,
+    p:  isMobile ? 2: 3,
   };
   const styleS = {
     position: 'absolute',
@@ -312,7 +316,7 @@ export default function BasicModal() {
                   <span className="sm-s sm "><img src={icon1} height={10} alt="" />Set Fractionalize shares </span>
                   <input type="text" className="form-control padding border-ui  input-font-ui"
                     value={100} />
-                  <p className="sm">Upto 100,000,000 max</p>
+                  <p className="sm">Upto 1,000,000 max</p>
                 </div>
                 <div className={`${isMobile ? '' : 'col-md-4 text-center'}`}>
                   <span className="sm-s sm "><img src={icon2} height={10} alt="" />Set Price for shares </span>
@@ -377,7 +381,7 @@ export default function BasicModal() {
                 </Typography>
                 <Slider
                   aria-label="Custom marks"
-                  defaultValue={8}
+                  defaultValue={5}
                   getAriaValueText={valuetext}
                   step={1}
                   size="small"

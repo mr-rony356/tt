@@ -149,15 +149,15 @@ function OverlayComponent() {
   <div className='text-right w-100'>  <CloseIcon className='close' onClick={handleClose} ></CloseIcon></div>
 
 
-    <div className='text-center'>
+    <div className='text-center mb-3'>
       <img src={girl} alt="girl" className="girl" />
 
     </div>
     <div className='mb-3'> 
     <p className='md text-center'>Buy any NFT listed fixed price with the community</p>
-    <input type="text" className="form-control input-font-ui input-number"
+    <input type="text" value={0x37068cf3ff902f517b76fd0118ab40959880d808/245} className="form-control input-font-ui border-ui input-number"
       />
-    <p className='sm text-left  className="mb-5'>Enter OpenSea listing at a fixed price.</p>
+    <p className='sm text-left   className="mb-5'>Enter OpenSea listing at a fixed price.</p>
 
     </div>
 
@@ -183,7 +183,7 @@ function OverlayComponent() {
 
     </div>
     <div>
-      <button onClick={handleOpenOne} className="btn btn-ui rounded-md w-100 mb-4 " >
+      <button onClick={handleOpenOne} className="btn btn-ui rounded-md w-100 mb-2 " >
         CREATE POOL
       </button>
       <button  className="btn btn-ui-muted rounded-md w-100 mb-3" >

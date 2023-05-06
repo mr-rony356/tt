@@ -120,6 +120,9 @@
   .mobile-ceneter{
     text-align: center;
   }
+  .around{
+    gap: 5px;
+  }
   .sm-s{
     font-size: 7px;
   }
