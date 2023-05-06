@@ -92,12 +92,20 @@
 
   margin-bottom: 50px !important;
 }
+.css-1gtlbg0 > :not(style) + :not(style) {
+  margin: 0px 0px 0px 50px !important;
+}
 .min-height{
   min-height: auto;
 }
 .float-l{
   float: right;
 }
+@media (min-width: 1200px){
+.css-1xhypcz-MuiStack-root>:not(style)+:not(style) {
+    margin: 0;
+    margin-left: 40px !important;
+}}
 .between{
   justify-content: space-between;
 }

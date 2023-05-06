@@ -312,19 +312,19 @@ export default function BasicModal() {
 
             <div className=" border-ui mb-3">
             <div className= {`${isMobile ? '  d-flex around ' : 'row'}`}>
-            <div className={`${isMobile ? '' : 'col-md-4 text-center'}`}>
+            <div className={`${isMobile ? '' : 'col-md-4 text-left'}`}>
                   <span className="sm-s sm "><img src={icon1} height={10} alt="" />Set Fractionalize shares </span>
                   <input type="text" className="form-control padding border-ui  input-font-ui"
                     value={100} />
                   <p className="sm">Upto 1,000,000 max</p>
                 </div>
-                <div className={`${isMobile ? '' : 'col-md-4 text-center'}`}>
+                <div className={`${isMobile ? '' : 'col-md-4 text-left'}`}>
                   <span className="sm-s sm "><img src={icon2} height={10} alt="" />Set Price for shares </span>
                   <input type="text" className="form-control padding border-ui  input-font-ui"
                     value={'$50'} />
                   <p className="sm">.25</p>
                 </div>
-                <div className={`${isMobile ? '' : 'col-md-4 text-center'}`}>
+                <div className={`${isMobile ? '' : 'col-md-4 text-left'}`}>
                   <span className="sm-s sm"><img src={icon3} height={10} alt="" />Token name </span>
                   <input type="text" className="form-control padding border-ui  input-font-ui"
                     value={'Kidzuki'} />
@@ -377,7 +377,7 @@ export default function BasicModal() {
                 <div className={`${isMobile ? 'mbm-1' : 'mb-3'}`}>
               <Box sx={{ width: '100%' }}>
                 <Typography id="track-inverted-slider" className="text-left md" gutterBottom>
-                  Creator Fees
+                  Creator Fees (5%)
                 </Typography>
                 <Slider
                   aria-label="Custom marks"
